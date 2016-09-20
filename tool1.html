@@ -1,0 +1,17 @@
+<html>
+	<body>
+	<title>CGI Python</title>
+	<h1>Dictionary Taxonomy using CGI</h1>
+		<form enctype="multipart/form-data" action="http://10.88.25.48/cgi-bin/tools/dictionary.py" method="post">
+			<textarea name="insert" cols="50" rows="6"></textarea><br/>
+			<input type="radio" name="select" value="kingdom" /> kingdom
+			<input type="radio" name="select" value="phylum" /> phylum
+			<input type="radio" name="select" value="class" /> class
+			<input type="radio" name="select" value="maths" /> order
+			<input type="radio" name="select" value="family" /> family
+			<input type="radio" name="select" value="genus" /> genus<br/>
+			File: <input type="file" name="filename">
+			<p><input type="submit" name="print" value="Result HTML">&nbsp;<input type="submit" name="download" value="Result CSV">
+		</form>
+	</body>
+</html>

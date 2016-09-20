@@ -7,7 +7,7 @@ import sys
 
 form = cgi.FieldStorage()
 data = form['filename'].file
-insert = form.getlist("insert")
+insert = form.getvalue("insert").replace(',','')
 
 location_database = open('/home/bioinformatics2/DW/taxo.json', 'r')
 database = json.load(location_database)
@@ -16,9 +16,9 @@ if "print" in form:
 	if insert:		
 		print "content-type: text/html"
 		print ""
-		for line in insert: 
+		for line in insert.split(' '): 
 		 for taxonomy in database:	
-		  if taxonomy["genus"] == line.replace(',','\n'):
+		  if taxonomy["genus"] == line:
 		   print "Kingdom: %s," % taxonomy['kingdom'],
 		   print "phylum: %s," % taxonomy['phylum'],
 		   print "class: %s," % taxonomy['class'],
